@@ -36,8 +36,9 @@ DATABASES = {
 
 
 
-
+```c
 MySQL Python 드라이버 설치
+
 Django가 MySQL과 통신하려면 mysqlclient 패키지가 필요
 
 pip install mysqlclient
@@ -48,25 +49,26 @@ pip install mysqlclient
 설치 확인
 
 pip show mysqlclient
-
+```
 
 
 
 
 -------------
-
+```c
 mysql 환경변수 설정 
 
 DROP DATABASE IF EXISTS django_board;
 CREATE DATABASE django_board CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-
+```
 ---------------
+
+
 장고셸에서
+```c
 
 마이그레이션 파일 생성 Django가 현재 모델(models.py) 상태에 따라 새로운 마이그레이션 파일을 생성
 python manage.py makemigrations pybo2
-
-
 
 
 
@@ -74,13 +76,13 @@ python manage.py makemigrations pybo2
 MySQL에 적용
 python manage.py migrate pybo2
 
-
+```
 
 ----------------------
 
 
 장고셸
-
+```c
 python manage.py shell
 
 pybo2 앱에서 Question 모델 임포트
@@ -95,18 +97,18 @@ from django.utils.timezone import now
 
 Question.objects.create(subject="Test", content="This is a test.", create_date=now())
 
-
+```
 ---------------------
 
 MySQL에서
-
+```c
 USE django_board;
 
 select * from pybo2_question;
 
 select * from pybo2_answer;
 
-
+```
 
 -----------------------------------
 
