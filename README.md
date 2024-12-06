@@ -15,6 +15,7 @@ pip install mysqlclient
 
 
 
+
 설치 확인
 
 pip show mysqlclient
@@ -23,16 +24,20 @@ pip show mysqlclient
 
 
 
+-------------
+
 mysql 환경변수 설정 
 
 DROP DATABASE IF EXISTS django_board;
 CREATE DATABASE django_board CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
-
+---------------
 장고셸에서
 
 마이그레이션 파일 생성 Django가 현재 모델(models.py) 상태에 따라 새로운 마이그레이션 파일을 생성
 python manage.py makemigrations pybo2
+
+
 
 
 
@@ -42,26 +47,34 @@ python manage.py migrate pybo2
 
 
 
-
+----------------------
 
 
 장고셸
+
 python manage.py shell
 
 pybo2 앱에서 Question 모델 임포트
+
 from pybo2.models import Question
 
 현재 시간을 가져오기 위한 임포트
+
 from django.utils.timezone import now
 
 질문 객체 생성
+
 Question.objects.create(subject="Test", content="This is a test.", create_date=now())
 
 
+---------------------
 
 MySQL에서
+
 USE django_board;
+
 select * from pybo2_question;
+
 select * from pybo2_answer;
 
 
@@ -75,18 +88,22 @@ CREATE DATABASE django_board CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 
 -- django_board DB 스키마를 만들어라
+
 CREATE DATABASE django_board;
 
 -- 데이터베이스 삭제
+
 DROP DATABASE IF EXISTS django_board;
 
 
 -- django_board DB를 사용하겠다
+
 USE django_board;
 
 SHOW TABLES;
 
 -- 데이터베이스 확인
+
 show databases;
 
 
