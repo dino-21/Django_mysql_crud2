@@ -6,6 +6,34 @@ step1  - CRUD  -MYSQL 작업 2
 ![4](https://github.com/user-attachments/assets/56a49a12-b0d0-4404-ae2f-adb0d2d04f0e)
 
 
+config  > settings.py 
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',  # MySQL 백엔드
+        'NAME': 'django_board',               # 데이터베이스 이름 (XML의 url 속성에서 추출)
+        'USER': 'root',                       # 사용자 이름 (username 속성)
+        'PASSWORD': '1234',                   # 비밀번호 (password 속성)
+        'HOST': 'localhost',                  # 호스트 (url 속성에서 추출)
+        'PORT': '3306',                       # MySQL 포트 (url 속성에서 추출)
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
+    }
+}
+
+
+
+-----------------------------
+
+
+
+
+
+
+
+
 
 
 MySQL Python 드라이버 설치
