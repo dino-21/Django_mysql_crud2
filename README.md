@@ -110,7 +110,7 @@ select * from pybo2_answer;
 
 -----------------------------------
 
-
+```c
 DROP DATABASE IF EXISTS django_board;
 
 CREATE DATABASE django_board CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
@@ -148,4 +148,4 @@ select * from pybo2_question;
 
 select * from pybo2_answer;
 
-
+```
