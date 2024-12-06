@@ -8,6 +8,7 @@ step1  - CRUD  -MYSQL 작업 2
 
 config  > settings.py 
 
+#코드
 
 DATABASES = {
     'default': {
