@@ -10,11 +10,13 @@ step1  - CRUD  -MYSQL 작업 2
 
 MySQL Python 드라이버 설치
 Django가 MySQL과 통신하려면 mysqlclient 패키지가 필요
+
 pip install mysqlclient
 
 
 
 설치 확인
+
 pip show mysqlclient
 
 
